@@ -147,7 +147,7 @@ const DUMMY_MEALS = const [
     affordability: Affordability.Affordable,
     complexity: Complexity.Hard,
     imageUrl:
-        'https://thishealthytable.com/wp-content/uploads/2022/06/simit-bread.jpg',
+        'https://magazinebbm.com/assets/img/uploads/2021/02/istanbulda-simit-fiyatlarina-zam.jpg',
     duration: 60,
     ingredients: [
       '1 1/2 cup all-purpose flour',
