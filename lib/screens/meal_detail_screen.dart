@@ -51,6 +51,15 @@ class MealDetailScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  getTimeBoxUI(
+                      Icons.schedule, selectedMeal.duration.toString(), ' min'),
+                  getTimeBoxUI(Icons.work_outline, 's', 'min'),
+                  getTimeBoxUI(Icons.attach_money, 'sa', 'min'),
+                ],
+              ),
               buildSectionTitle('Ingredients', context),
               buildContainer(
                 ListView.builder(
@@ -91,4 +100,59 @@ class MealDetailScreen extends StatelessWidget {
           ),
         ));
   }
+}
+
+Widget getTimeBoxUI(IconData ic1, String txt1, String txt2) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Container(
+      decoration: BoxDecoration(
+        color: Color(0xFFFFFFFF),
+        borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+              color: Color(0xFF3A5160).withOpacity(0.2),
+              offset: const Offset(1.1, 1.1),
+              blurRadius: 8.0),
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(
+            left: 18.0, right: 18.0, top: 12.0, bottom: 12.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              ic1,
+              color: Color(0xFF00B6F0),
+            ),
+            Row(
+              children: [
+                Text(
+                  txt1,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w200,
+                    fontSize: 14,
+                    letterSpacing: 0.27,
+                    color: Color(0xFF3A5160),
+                  ),
+                ),
+                Text(
+                  txt2,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 14,
+                    letterSpacing: 0.27,
+                    color: Color(0xFF3A5160),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }

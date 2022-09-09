@@ -8,46 +8,64 @@ const DUMMY_CATEGORIES = const [
     id: 'c1',
     title: 'Breakfasts',
     color: Colors.purple,
+    categoryImageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
   ),
   Category(
     id: 'c2',
     title: 'Dinners',
     color: Colors.red,
+    categoryImageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
   ),
   Category(
     id: 'c3',
     title: 'Breads',
     color: Colors.orange,
+    categoryImageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
   ),
   Category(
     id: 'c4',
     title: 'Soups',
     color: Colors.amber,
+    categoryImageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
   ),
   Category(
     id: 'c5',
     title: 'Street Foods',
     color: Colors.blue,
+    categoryImageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
   ),
   Category(
     id: 'c6',
     title: 'Meze and Salads',
     color: Colors.green,
+    categoryImageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
   ),
   Category(
     id: 'c7',
     title: 'Desserts',
     color: Colors.lightBlue,
+    categoryImageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
   ),
   Category(
     id: 'c8',
     title: 'Beverages',
     color: Colors.lightGreen,
+    categoryImageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
   ),
   Category(
     id: 'c9',
     title: 'Kebabs',
     color: Colors.pink,
+    categoryImageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
   ),
 ];
 
