@@ -2,10 +2,50 @@
 
 import 'package:flutter/material.dart';
 
+import '../models/meal.dart';
+
 import 'package:flutter_complete_guide/dummy_data.dart';
 
-class MealDetailScreen extends StatelessWidget {
+class MealDetailScreen extends StatefulWidget {
   static const routeName = '/meal-detail';
+
+  @override
+  State<MealDetailScreen> createState() => _MealDetailScreenState();
+}
+
+class _MealDetailScreenState extends State<MealDetailScreen>
+    with TickerProviderStateMixin {
+  String complexityTextreturn(complexity) {
+    switch (complexity) {
+      case Complexity.Simple:
+        return 'Simple';
+        break;
+      case Complexity.Challenging:
+        return 'Challenging';
+        break;
+      case Complexity.Hard:
+        return 'Hard';
+        break;
+      default:
+        return 'Unknown';
+    }
+  }
+
+  String affordabilityTextreturn(affordability) {
+    switch (affordability) {
+      case Affordability.Affordable:
+        return 'Affordable';
+        break;
+      case Affordability.Luxurious:
+        return 'Expensive';
+        break;
+      case Affordability.Pricey:
+        return 'Pricey';
+        break;
+      default:
+        return 'Unknown';
+    }
+  }
 
   Widget buildSectionTitle(String text, BuildContext context) {
     return Container(
@@ -34,6 +74,7 @@ class MealDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TabController _tabController = TabController(length: 2, vsync: this);
     final mealId = ModalRoute.of(context).settings.arguments as String;
     final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
     return Scaffold(
@@ -56,11 +97,13 @@ class MealDetailScreen extends StatelessWidget {
                 children: [
                   getTimeBoxUI(
                       Icons.schedule, selectedMeal.duration.toString(), ' min'),
-                  getTimeBoxUI(Icons.work_outline, 's', 'min'),
-                  getTimeBoxUI(Icons.attach_money, 'sa', 'min'),
+                  getTimeBoxUI(Icons.attach_money,
+                      affordabilityTextreturn(selectedMeal.affordability), ''),
+                  getTimeBoxUI(Icons.work_outline,
+                      complexityTextreturn(selectedMeal.complexity), ''),
                 ],
               ),
-              buildSectionTitle('Ingredients', context),
+              /*buildSectionTitle('Ingredients', context),
               buildContainer(
                 ListView.builder(
                     itemCount: selectedMeal.ingredients.length,
@@ -75,8 +118,8 @@ class MealDetailScreen extends StatelessWidget {
                             ),
                           ),
                         )),
-              ),
-              buildSectionTitle('Steps', context),
+              ),*/
+              /* buildSectionTitle('Steps', context),
               buildContainer(ListView.builder(
                 itemBuilder: (ctx, index) => Column(
                   children: [
@@ -95,7 +138,71 @@ class MealDetailScreen extends StatelessWidget {
                   ],
                 ),
                 itemCount: selectedMeal.steps.length,
-              ))
+              ))*/
+              Container(
+                child: TabBar(
+                  controller: _tabController,
+                  labelColor: Color(0xFF00B6F0),
+                  unselectedLabelColor: Color(0xFF3A5160),
+                  tabs: [
+                    Tab(
+                      child: Text(
+                        'Ingredients',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        'Steps',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: 300,
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    buildContainer(
+                      ListView.builder(
+                          itemCount: selectedMeal.ingredients.length,
+                          itemBuilder: (ctx, index) => Card(
+                                color: Colors.white70,
+                                elevation: 1,
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 5, horizontal: 10),
+                                  child: Text(
+                                    selectedMeal.ingredients[index],
+                                  ),
+                                ),
+                              )),
+                    ),
+                    buildContainer(ListView.builder(
+                      itemBuilder: (ctx, index) => Column(
+                        children: [
+                          ListTile(
+                            leading: CircleAvatar(
+                              child: Text('# ${(index + 1)}'),
+                            ),
+                            title: Text(
+                              selectedMeal.steps[index],
+                            ),
+                          ),
+                          Divider(
+                            thickness: 1,
+                            color: Colors.black,
+                          ),
+                        ],
+                      ),
+                      itemCount: selectedMeal.steps.length,
+                    )),
+                  ],
+                ),
+              )
             ],
           ),
         ));
@@ -132,7 +239,7 @@ Widget getTimeBoxUI(IconData ic1, String txt1, String txt2) {
                   txt1,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontWeight: FontWeight.w200,
+                    fontWeight: FontWeight.bold,
                     fontSize: 14,
                     letterSpacing: 0.27,
                     color: Color(0xFF3A5160),
@@ -142,7 +249,7 @@ Widget getTimeBoxUI(IconData ic1, String txt1, String txt2) {
                   txt2,
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.bold,
                     fontSize: 14,
                     letterSpacing: 0.27,
                     color: Color(0xFF3A5160),
