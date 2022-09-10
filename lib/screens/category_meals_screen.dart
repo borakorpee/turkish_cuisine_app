@@ -25,7 +25,15 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
       return meal.categories.contains(categoryId);
     }).toList();
     return Scaffold(
-      appBar: AppBar(title: Text(categoryTitle)),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
+        title: Text(
+          categoryTitle,
+          style: TextStyle(
+              color: Colors.black, fontSize: 22, fontWeight: FontWeight.w600),
+        ),
+        backgroundColor: Colors.white,
+      ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {
           return MealItem(

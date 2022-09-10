@@ -372,7 +372,7 @@ const DUMMY_MEALS = const [
     categories: [
       'c9',
     ],
-    title: 'Adana Kebabs (Turkish-Style Ground Lamb Skewers)',
+    title: 'Adana Kebab',
     affordability: Affordability.Luxurious,
     complexity: Complexity.Hard,
     imageUrl:

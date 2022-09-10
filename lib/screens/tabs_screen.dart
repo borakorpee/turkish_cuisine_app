@@ -33,25 +33,33 @@ class _TabScreenState extends State<TabScreen> {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
-            title: Text('Turkish Cuisine'),
+            iconTheme: IconThemeData(color: Colors.black),
+            title: Text(
+              'Turkish Cuisine',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600),
+            ),
+            backgroundColor: Colors.white,
           ),
           drawer: MainDrawer(),
           body: _pages[_selectPageIndex]['page'],
           bottomNavigationBar: BottomNavigationBar(
             onTap: _selectPage,
-            backgroundColor: Theme.of(context).primaryColor,
+            backgroundColor: Colors.black,
             unselectedItemColor: Colors.black,
-            selectedItemColor: Colors.white,
+            selectedItemColor: Colors.black,
             currentIndex: _selectPageIndex,
             type: BottomNavigationBarType.shifting,
             items: [
               BottomNavigationBarItem(
-                backgroundColor: Theme.of(context).primaryColor,
+                backgroundColor: Colors.white,
                 icon: Icon(Icons.category),
                 label: 'Categories',
               ),
               BottomNavigationBarItem(
-                backgroundColor: Theme.of(context).primaryColor,
+                backgroundColor: Colors.white,
                 icon: Icon(Icons.star),
                 label: 'Favorites',
               )

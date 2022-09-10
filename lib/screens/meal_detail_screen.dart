@@ -2,9 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../models/meal.dart';
-
 import 'package:flutter_complete_guide/dummy_data.dart';
+import 'package:flutter_complete_guide/turkish_cuisine_theme.dart';
 
 class MealDetailScreen extends StatefulWidget {
   static const routeName = '/meal-detail';
@@ -15,38 +14,6 @@ class MealDetailScreen extends StatefulWidget {
 
 class _MealDetailScreenState extends State<MealDetailScreen>
     with TickerProviderStateMixin {
-  String complexityTextreturn(complexity) {
-    switch (complexity) {
-      case Complexity.Simple:
-        return 'Simple';
-        break;
-      case Complexity.Challenging:
-        return 'Challenging';
-        break;
-      case Complexity.Hard:
-        return 'Hard';
-        break;
-      default:
-        return 'Unknown';
-    }
-  }
-
-  String affordabilityTextreturn(affordability) {
-    switch (affordability) {
-      case Affordability.Affordable:
-        return 'Affordable';
-        break;
-      case Affordability.Luxurious:
-        return 'Expensive';
-        break;
-      case Affordability.Pricey:
-        return 'Pricey';
-        break;
-      default:
-        return 'Unknown';
-    }
-  }
-
   Widget buildSectionTitle(String text, BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
@@ -75,70 +42,81 @@ class _MealDetailScreenState extends State<MealDetailScreen>
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 2, vsync: this);
-    final mealId = ModalRoute.of(context).settings.arguments as String;
+    final routeArgs =
+        ModalRoute.of(context).settings.arguments as Map<String, String>;
+    final mealId = routeArgs['id'];
+    final affordability = routeArgs['affordability'];
+    final complexity = routeArgs['complexity'];
     final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
     return Scaffold(
         appBar: AppBar(
-            title: FittedBox(
-                fit: BoxFit.scaleDown, child: Text(selectedMeal.title))),
+          iconTheme: IconThemeData(color: Colors.black),
+          title: FittedBox(
+            child: Text(
+              selectedMeal.title,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          backgroundColor: Colors.white,
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Container(
-                height: 300,
-                width: double.infinity,
-                child: Image.network(
-                  selectedMeal.imageUrl,
-                  fit: BoxFit.cover,
-                ),
+              Stack(
+                children: <Widget>[
+                  Container(
+                    width: double.infinity,
+                    height: 300,
+                    child: ClipRRect(
+                      child: Image.network(
+                        selectedMeal.imageUrl,
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(120),
+                          bottomLeft: Radius.circular(120)),
+                    ),
+                  ),
+                  Positioned(
+                      top: -8,
+                      right: -12,
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(32),
+                          ),
+                          onTap: () {},
+                          child: Padding(
+                            padding: EdgeInsets.all(8),
+                            child: SizedBox(
+                              height: 50,
+                              width: 50,
+                              child: Icon(
+                                Icons.favorite_border,
+                                size: 40,
+                                color: TurkishCuisineTheme.buildLightTheme()
+                                    .primaryColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      )),
+                ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   getTimeBoxUI(
                       Icons.schedule, selectedMeal.duration.toString(), ' min'),
-                  getTimeBoxUI(Icons.attach_money,
-                      affordabilityTextreturn(selectedMeal.affordability), ''),
-                  getTimeBoxUI(Icons.work_outline,
-                      complexityTextreturn(selectedMeal.complexity), ''),
+                  getTimeBoxUI(Icons.attach_money, affordability, ''),
+                  getTimeBoxUI(Icons.work_outline, complexity, ''),
                 ],
               ),
-              /*buildSectionTitle('Ingredients', context),
-              buildContainer(
-                ListView.builder(
-                    itemCount: selectedMeal.ingredients.length,
-                    itemBuilder: (ctx, index) => Card(
-                          color: Colors.white70,
-                          elevation: 1,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                vertical: 5, horizontal: 10),
-                            child: Text(
-                              selectedMeal.ingredients[index],
-                            ),
-                          ),
-                        )),
-              ),*/
-              /* buildSectionTitle('Steps', context),
-              buildContainer(ListView.builder(
-                itemBuilder: (ctx, index) => Column(
-                  children: [
-                    ListTile(
-                      leading: CircleAvatar(
-                        child: Text('# ${(index + 1)}'),
-                      ),
-                      title: Text(
-                        selectedMeal.steps[index],
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1,
-                      color: Colors.black,
-                    ),
-                  ],
-                ),
-                itemCount: selectedMeal.steps.length,
-              ))*/
               Container(
                 child: TabBar(
                   controller: _tabController,

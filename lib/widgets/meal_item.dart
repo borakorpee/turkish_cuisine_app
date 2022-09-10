@@ -53,10 +53,11 @@ class MealItem extends StatelessWidget {
   }
 
   void selectMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(
-      MealDetailScreen.routeName,
-      arguments: id,
-    );
+    Navigator.of(context).pushNamed(MealDetailScreen.routeName, arguments: {
+      'id': id,
+      'affordability': affordabilityText,
+      'complexity': complexityText,
+    });
   }
 
   @override
@@ -68,7 +69,7 @@ class MealItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         elevation: 4,
-        margin: EdgeInsets.all(10),
+        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
         child: Column(children: <Widget>[
           Stack(
             children: <Widget>[
@@ -84,30 +85,6 @@ class MealItem extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              /*Positioned(
-                bottom: 20,
-                right: 20,
-                child: Container(
-                  color: Colors.black54,
-                  padding: EdgeInsets.symmetric(
-                    vertical: 5,
-                    horizontal: 20,
-                  ),
-                  width: 300,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Text(
-                      title,
-                      style: TextStyle(
-                        fontSize: 26,
-                        color: Colors.white,
-                      ),
-                      softWrap: true,
-                      overflow: TextOverflow.fade,
-                    ),
-                  ),
-                ),
-              )*/
             ],
           ),
           Padding(
@@ -120,40 +97,12 @@ class MealItem extends StatelessWidget {
                     child: Text(
                       title,
                       textAlign: TextAlign.start,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
                     ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Expanded(
-                      child: Row(children: <Widget>[
-                        Icon(Icons.schedule),
-                        SizedBox(width: 6),
-                        Text('$duration min'),
-                      ]),
-                    ),
-                    Expanded(
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Row(children: <Widget>[
-                          Icon(Icons.work_outline),
-                          SizedBox(width: 6),
-                          Text(complexityText),
-                        ]),
-                      ),
-                    ),
-                    Expanded(
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Row(children: <Widget>[
-                          Icon(Icons.attach_money),
-                          SizedBox(width: 6),
-                          Text(affordabilityText),
-                        ]),
-                      ),
-                    ),
-                  ],
                 ),
               ],
             ),
