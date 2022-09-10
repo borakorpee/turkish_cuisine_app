@@ -109,9 +109,7 @@ const DUMMY_MEALS = const [
   //DINNERS
   Meal(
     id: 'm2',
-    categories: [
-      'c2',
-    ],
+    categories: ['c2', 'c1'],
     title: 'Karniyarik (Stuffed Eggplant)',
     affordability: Affordability.Affordable,
     complexity: Complexity.Challenging,
@@ -160,6 +158,7 @@ const DUMMY_MEALS = const [
     id: 'm3',
     categories: [
       'c3',
+      'c1',
     ],
     title: 'Simit Turkish Bagels',
     affordability: Affordability.Affordable,
@@ -374,7 +373,7 @@ const DUMMY_MEALS = const [
       'c9',
     ],
     title: 'Adana Kebabs (Turkish-Style Ground Lamb Skewers)',
-    affordability: Affordability.Pricey,
+    affordability: Affordability.Luxurious,
     complexity: Complexity.Hard,
     imageUrl:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Adana_kebab.jpg/800px-Adana_kebab.jpg',
