@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/widgets/main_drawer.dart';
 import 'favorites_screen.dart';
 import 'categories_screen.dart';
 
@@ -34,6 +35,7 @@ class _TabScreenState extends State<TabScreen> {
           appBar: AppBar(
             title: Text('Turkish Cuisine'),
           ),
+          drawer: MainDrawer(),
           body: _pages[_selectPageIndex]['page'],
           bottomNavigationBar: BottomNavigationBar(
             onTap: _selectPage,
