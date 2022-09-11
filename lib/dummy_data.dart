@@ -9,63 +9,63 @@ const DUMMY_CATEGORIES = const [
     title: 'Breakfasts',
     color: Colors.purple,
     categoryImageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
+        'https://eskapas.com/wp-content/uploads/2021/01/turkish-breakfast-2.jpg',
   ),
   Category(
     id: 'c2',
     title: 'Dinners',
     color: Colors.red,
     categoryImageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
+        'https://www.tooistanbul.com/wp-content/uploads/2014/07/turkish-food.jpg',
   ),
   Category(
     id: 'c3',
     title: 'Breads',
     color: Colors.orange,
     categoryImageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
+        'https://stylesatlife.com/wp-content/uploads/2019/06/Different-Types-of-Bread-that-Deliciously-Tempt.jpg.webp',
   ),
   Category(
     id: 'c4',
     title: 'Soups',
     color: Colors.amber,
     categoryImageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
+        'https://www.turkfoodsrecipes.com/wp-content/uploads/2019/12/Best-Turkish-Soups-The-Most-Delicious-Soups-from-Turkish-Cuisine-500x353.jpg',
   ),
   Category(
     id: 'c5',
     title: 'Street Foods',
     color: Colors.blue,
     categoryImageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
+        'https://img.theculturetrip.com/450x/smart/wp-content/uploads/2021/06/tx23gc.jpg',
   ),
   Category(
     id: 'c6',
     title: 'Meze and Salads',
     color: Colors.green,
     categoryImageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
+        'https://ozlemsturkishtable.com/files/2016/03/IMG_5521-700x518.jpg',
   ),
   Category(
     id: 'c7',
     title: 'Desserts',
     color: Colors.lightBlue,
     categoryImageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
+        'https://media-cdn.tripadvisor.com/media/photo-s/06/0e/58/0f/limon-osmanli-mutfagi.jpg',
   ),
   Category(
     id: 'c8',
     title: 'Beverages',
     color: Colors.lightGreen,
     categoryImageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3JGUqAdlYKtjilFobpZijSjL0dGYGVq4lNw&usqp=CAU',
   ),
   Category(
     id: 'c9',
     title: 'Kebabs',
     color: Colors.pink,
     categoryImageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/2000px-Flag_of_Turkey.svg.png',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPEiKNg_Pz0vGQeHW2SfKolNXhEs0HHtbeaYUqgtnRtJQu8k-fZ_a3fJguDFXO_-7xSKo&usqp=CAU',
   ),
 ];
 

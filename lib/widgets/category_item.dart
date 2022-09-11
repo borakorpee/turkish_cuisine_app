@@ -21,29 +21,32 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 10,
-      padding: EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: Color.fromARGB(255, 239, 239, 239),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-          ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(25),
-            child: Image.network(
-              categoryImageUrl,
-              fit: BoxFit.fill,
+    return InkWell(
+      onTap: () => selectCategory(context),
+      child: Container(
+        width: 10,
+        padding: EdgeInsets.all(15),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Color.fromARGB(255, 239, 239, 239),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
-          )
-        ],
+            ClipRRect(
+              borderRadius: BorderRadius.circular(25),
+              child: Image.network(
+                categoryImageUrl,
+                fit: BoxFit.fill,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
