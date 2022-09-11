@@ -1,16 +1,61 @@
-# turkish_meals_app
+<h1> Screenshots From the App</h1>
 
-A new Flutter project.
+<hr class="solid" style = "border-top: 3px solid #bbb;">
+<h4> Home Screen</h4>
 
-## Getting Started
+<p align="center">
+  <img width="400" height="800" src="https://github.com/borakorpee/turkish_cuisine_app/blob/main/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20-%202022-09-12%20at%2001.30.29.png">
+</p>
 
-This project is a starting point for a Flutter application.
+<hr class="solid" style = "border-top: 3px solid #bbb;">
+<h4> Specific Category Meals Screen</h4>
 
-A few resources to get you started if this is your first Flutter project:
+<p align="center">
+  <img width="400" height="800" src="https://github.com/borakorpee/turkish_cuisine_app/blob/main/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20-%202022-09-12%20at%2001.32.00.png">
+</p>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<hr class="solid" style = "border-top: 3px solid #bbb;">
+<h4> Specific Meals Screen / Ingredients </h4>
+
+<p align="center">
+  <img width="400" height="800" src="https://github.com/borakorpee/turkish_cuisine_app/blob/main/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20-%202022-09-12%20at%2001.32.08.png">
+</p>
+
+<hr class="solid" style = "border-top: 3px solid #bbb;">
+<h4> Specific Meals Screen / Steps </h4>
+
+<p align="center">
+  <img width="400" height="800" src="https://github.com/borakorpee/turkish_cuisine_app/blob/main/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20-%202022-09-12%20at%2001.32.24.png">
+</p> 
+
+<hr class="solid" style = "border-top: 3px solid #bbb;">
+<h4> Favorites (Empty) </h4>
+
+
+<p align="center">
+  <img width="400" height="800" src="https://github.com/borakorpee/turkish_cuisine_app/blob/main/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20-%202022-09-12%20at%2001.30.49.png">
+</p>
+
+<hr class="solid" style = "border-top: 3px solid #bbb;">
+<h4> Drawer </h4>
+
+<p align="center">
+  <img width="400" height="800" src="https://github.com/borakorpee/turkish_cuisine_app/blob/main/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20-%202022-09-12%20at%2001.30.57.png">
+</p>
+
+<hr class="solid" style = "border-top: 3px solid #bbb;">
+<h4> Meal Filters Screen</h4>
+
+<p align="center">
+  <img width="400" height="800" src="https://github.com/borakorpee/turkish_cuisine_app/blob/main/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20-%202022-09-12%20at%2001.31.27.png">
+</p>
+
+
+
+<hr class="solid" style = "border-top: 3px solid #bbb;">
+<h4> Favorite Selected Meals Screen </h4>
+
+<p align="center">
+  <img width="400" height="800" src="https://github.com/borakorpee/turkish_cuisine_app/blob/main/screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2012%20-%202022-09-12%20at%2001.33.00.png">
+</p>
