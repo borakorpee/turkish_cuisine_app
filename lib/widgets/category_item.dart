@@ -38,13 +38,15 @@ class CategoryItem extends StatelessWidget {
               title,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(25),
-              child: Image.network(
-                categoryImageUrl,
-                fit: BoxFit.fill,
+            Expanded(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(25),
+                child: Image.network(
+                  categoryImageUrl,
+                  fit: BoxFit.contain,
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -154,13 +154,17 @@ class _MealDetailScreenState extends State<MealDetailScreen>
                           itemCount: selectedMeal.ingredients.length,
                           itemBuilder: (ctx, index) => Card(
                                 color: Colors.white70,
-                                elevation: 1,
+                                elevation: 0.1,
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
                                       vertical: 5, horizontal: 10),
-                                  child: Text(
-                                    selectedMeal.ingredients[index],
-                                  ),
+                                  child: StreamBuilder<Object>(
+                                      stream: null,
+                                      builder: (context, snapshot) {
+                                        return Text(
+                                          selectedMeal.ingredients[index],
+                                        );
+                                      }),
                                 ),
                               )),
                     ),
@@ -169,7 +173,13 @@ class _MealDetailScreenState extends State<MealDetailScreen>
                         children: [
                           ListTile(
                             leading: CircleAvatar(
-                              child: Text('# ${(index + 1)}'),
+                              backgroundColor: Color(0xFF00B6F0),
+                              child: Text(
+                                '${(index + 1)}',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                             title: Text(
                               selectedMeal.steps[index],
@@ -198,17 +208,17 @@ Widget getTimeBoxUI(IconData ic1, String txt1, String txt2) {
     child: Container(
       decoration: BoxDecoration(
         color: Color(0xFFFFFFFF),
-        borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+        borderRadius: BorderRadius.all(Radius.circular(16.0)),
         boxShadow: <BoxShadow>[
           BoxShadow(
               color: Color(0xFF3A5160).withOpacity(0.2),
-              offset: const Offset(1.1, 1.1),
+              offset: Offset(1.1, 1.1),
               blurRadius: 8.0),
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.only(
-            left: 18.0, right: 18.0, top: 12.0, bottom: 12.0),
+        padding:
+            EdgeInsets.only(left: 18.0, right: 18.0, top: 12.0, bottom: 12.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

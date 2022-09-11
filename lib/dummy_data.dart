@@ -109,7 +109,10 @@ const DUMMY_MEALS = const [
   //DINNERS
   Meal(
     id: 'm2',
-    categories: ['c2', 'c1'],
+    categories: [
+      'c2',
+      'c1',
+    ],
     title: 'Karniyarik (Stuffed Eggplant)',
     affordability: Affordability.Affordable,
     complexity: Complexity.Challenging,
