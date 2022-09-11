@@ -21,28 +21,46 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return Container(
+      width: 10,
+      padding: EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        color: Color.fromARGB(255, 239, 239, 239),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(25),
+            child: Image.network(
+              categoryImageUrl,
+              fit: BoxFit.fill,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+/* InkWell(
       onTap: () => selectCategory(context),
-      splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(15),
       child: Container(
         padding: EdgeInsets.all(15),
         child: Text(
           title,
-          style: Theme.of(context).textTheme.bodyText2,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              color.withOpacity(0.7),
-              color,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
+          color: Color.fromARGB(255, 239, 235, 235),
           borderRadius: BorderRadius.circular(15),
         ),
       ),
-    );
-  }
-}
+    );*/
