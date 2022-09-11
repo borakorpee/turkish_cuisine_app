@@ -7,7 +7,9 @@ import 'package:flutter_complete_guide/turkish_cuisine_theme.dart';
 
 class MealDetailScreen extends StatefulWidget {
   static const routeName = '/meal-detail';
-
+  final Function toggleFavorite;
+  final Function isFavorite;
+  MealDetailScreen(this.toggleFavorite, this.isFavorite);
   @override
   State<MealDetailScreen> createState() => _MealDetailScreenState();
 }
@@ -39,6 +41,7 @@ class _MealDetailScreenState extends State<MealDetailScreen>
     );
   }
 
+  @override
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 2, vsync: this);
@@ -90,14 +93,16 @@ class _MealDetailScreenState extends State<MealDetailScreen>
                           borderRadius: BorderRadius.all(
                             Radius.circular(32),
                           ),
-                          onTap: () {},
+                          onTap: (() => widget.toggleFavorite(mealId)),
                           child: Padding(
                             padding: EdgeInsets.all(8),
                             child: SizedBox(
                               height: 50,
                               width: 50,
                               child: Icon(
-                                Icons.favorite_border,
+                                widget.isFavorite(mealId)
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
                                 size: 40,
                                 color: TurkishCuisineTheme.buildLightTheme()
                                     .primaryColor,
