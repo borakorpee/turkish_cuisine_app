@@ -19,9 +19,6 @@ class _FilterScreenState extends State<FilterScreen> {
   bool _Simple = false;
   bool _Challenging = false;
   bool _Hard = false;
-  bool _Affordable = false;
-  bool _Pricey = false;
-  bool _Expensive = false;
 
   @override
   void initState() {
@@ -39,6 +36,7 @@ class _FilterScreenState extends State<FilterScreen> {
     Function updateValue,
   ) {
     return SwitchListTile(
+        activeColor: Colors.black,
         title: Text(titletxt),
         value: currentValue,
         subtitle: Text(description),

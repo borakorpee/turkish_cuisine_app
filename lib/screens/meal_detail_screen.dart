@@ -131,13 +131,15 @@ class _MealDetailScreenState extends State<MealDetailScreen>
                     Tab(
                       child: Text(
                         'Ingredients',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
                       ),
                     ),
                     Tab(
                       child: Text(
                         'Steps',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
                       ),
                     )
                   ],
@@ -158,13 +160,22 @@ class _MealDetailScreenState extends State<MealDetailScreen>
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
                                       vertical: 5, horizontal: 10),
-                                  child: StreamBuilder<Object>(
-                                      stream: null,
-                                      builder: (context, snapshot) {
-                                        return Text(
-                                          selectedMeal.ingredients[index],
-                                        );
-                                      }),
+                                  child: Container(
+                                    child: Stack(children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Icon(
+                                            Icons.circle,
+                                            size: 12,
+                                          ),
+                                          SizedBox(width: 10),
+                                          Flexible(
+                                              child: Text(selectedMeal
+                                                  .ingredients[index])),
+                                        ],
+                                      )
+                                    ]),
+                                  ),
                                 ),
                               )),
                     ),
@@ -256,3 +267,12 @@ Widget getTimeBoxUI(IconData ic1, String txt1, String txt2) {
     ),
   );
 }
+/*StreamBuilder<Object>(
+                                      stream: null,
+                                      builder: (context, snapshot) {
+                                        return Text(
+                                            selectedMeal.ingredients[index],
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .subtitle1);
+                                      }),*/
